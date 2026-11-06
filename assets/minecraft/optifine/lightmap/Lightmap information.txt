@@ -1,0 +1,6 @@
+Lightmap 
+world0.png
+world1.png
+world-1.png
+
+Made by Sencie https://www.planetminecraft.com/texture-pack/old-lighting-amp-old-water/

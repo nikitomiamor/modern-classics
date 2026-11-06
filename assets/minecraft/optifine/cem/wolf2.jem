@@ -1,0 +1,23 @@
+{
+	"textureSize": [64, 32],
+	"models": [
+		{
+			"part": "body",
+			"id": "body",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"boxes": [
+				{"coordinates": [-3, 17, -3, 6, 15, 6], "textureOffset": [40, 0], "sizeAdd": 0.01}
+			]
+		},
+		{
+			"part": "upper_body",
+			"id": "upper_body",
+			"invertAxis": "xy",
+			"translate": [0, -24, 0],
+			"boxes": [
+
+			]
+		}
+	]
+}
