@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"top": "minecraft:block/oxidized_copper_top",
+		"side": "minecraft:block/oxidized_copper",
+		"bottom": "minecraft:block/oxidized_copper_bottom",
+		"particle": "minecraft:block/oxidized_copper"
+	}
+}
