@@ -1,21 +1,65 @@
 {
-	"textureSize": [64, 32],
+	"textureSize": [
+		64,
+		32
+	],
 	"models": [
 		{
 			"part": "body",
 			"id": "body",
 			"invertAxis": "xy",
-			"translate": [0, -24, 0],
+			"translate": [
+				0,
+				-10,
+				-2
+			],
 			"boxes": [
 				{
-					"coordinates": [-3, 17, -3, 6, 15, 6],
+					"coordinates": [
+						-3,
+						3,
+						-1,
+						6,
+						15,
+						6
+					],
 					"sizeAdd": 0.21,
-					"uvUp": [52, 0, 58, 6],
-					"uvDown": [52, 12, 58, 6],
-					"uvWest": [42, 16, 48, 31],
-					"uvNorth": [48, 16, 54, 31],
-					"uvEast": [54, 16, 60, 31],
-					"uvSouth": [58, 0, 64, 15]
+					"uvUp": [
+						58,
+						12,
+						52,
+						6
+					],
+					"uvDown": [
+						58,
+						0,
+						52,
+						6
+					],
+					"uvWest": [
+						54,
+						31,
+						60,
+						16
+					],
+					"uvNorth": [
+						54,
+						31,
+						48,
+						16
+					],
+					"uvEast": [
+						42,
+						31,
+						48,
+						16
+					],
+					"uvSouth": [
+						64,
+						15,
+						58,
+						0
+					]
 				}
 			]
 		},
@@ -23,10 +67,12 @@
 			"part": "upper_body",
 			"id": "upper_body",
 			"invertAxis": "xy",
-			"translate": [0, -24, 0],
-			"boxes": [
-
-			]
+			"translate": [
+				0,
+				-10,
+				-2
+			],
+			"boxes": []
 		}
 	]
 }
