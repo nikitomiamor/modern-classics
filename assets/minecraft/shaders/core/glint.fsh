@@ -2,10 +2,13 @@
 #extension GL_ARB_separate_shader_objects : require
 
 // Classic enchantment glint (1.0 - 1.2.5).
-// The textures already carry the old tint (0.5, 0.25, 0.8) * 0.76.
-// The glint blend is (SRC_COLOR, ONE): the screen gets color * color added.
-// Old versions drew two passes, so the screen got c1*c1 + c2*c2; output the
-// square root of that so the blend gives the same sum in one pass.
+// Since 26.x most glints (items, armor, entities) are drawn inside item.fsh and
+// entity.fsh as one layer: (GlintAlpha * texture)^2. The textures are the old
+// tint (0.5, 0.25, 0.8) * 0.76 brightened by K = sqrt(2) / 0.75, so that one
+// layer at the default 75% matches the old two passes.
+// This shader is the remaining "glint" pipeline: it undoes K and adds the two
+// old crossing layers instead. The blend is (SRC_COLOR, ONE), which squares
+// the output, so output the square root of the old sum c1*c1 + c2*c2.
 // Old versions had no "Glint Strength" option: the default 75% looks like
 // the old glint, and lower values still dim it.
 
@@ -31,6 +34,7 @@ void main() {
     }
     float fog = 1.0 - total_fog_value(sphericalVertexDistance, cylindricalVertexDistance, FogEnvironmentalStart, FogEnvironmentalEnd, FogRenderDistanceStart, FogRenderDistanceEnd);
     float strength = clamp(GlintAlpha / 0.75, 0.0, 1.0);
-    vec3 sum = (c1.rgb * c1.rgb + c2.rgb * c2.rgb) * guiBoost;
+    const float K2 = 2.0 / (0.75 * 0.75); // K squared
+    vec3 sum = (c1.rgb * c1.rgb + c2.rgb * c2.rgb) / K2 * guiBoost;
     fragColor = vec4(sqrt(sum * fog * strength), 1.0);
 }
